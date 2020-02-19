@@ -6,5 +6,15 @@ from .models import Edata
 
 
 def home(request):
-    det = Sdata()
-    return render(request, "home.html",{'det':det})
+    if request.method == 'POST':
+        if request.POST.get('name') and request.POST.get('location') and request.POST.get('dob'):
+            edata = Edata()
+            edata.name = request.POST.get('name')
+            edata.location = request.POST.get('location')
+            edata.dob = request.POST.get('dob')
+            edata.save()
+
+            return render(request,'home.html')
+    else:
+
+        return render(request, "home.html")
