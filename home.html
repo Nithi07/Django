@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>student database</title>
+    <style>
+        .i-am-centered {
+            margin: auto;
+            max-width: 300px;
+            padding-top: 20%;
+        }
+    </style>
+</head>
+<body bgcolor="cyan">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="i-am-centered">
+            <div>
+                <label>Student Id</label>
+                {{det.id}}
+            </div>
+            <div>
+                <label>Student name</label>
+                {{det.name}}
+            </div>
+            <div>
+                <label>Student Location</label>
+                {{det.location}}
+            </div>
+            <div>
+                <label>Date of Birth</label>
+                {{det.dob}}
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+
+
+</body>
+</html>
