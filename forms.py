@@ -1,9 +1,9 @@
 from django import forms
+from .models import Edata
 
-class Sdata(forms.Form):
-    id = forms.IntegerField()
-    name = forms.CharField(max_length = 50)
-    location = forms.CharField(max_length = 50)
-    dob = forms.DateField()
-
-  
+class Edatass(forms.ModelForm):
+    class Meta:
+        model = Edata
+        fields = "__all__"
+    
+   
